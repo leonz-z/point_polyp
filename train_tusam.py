@@ -259,7 +259,7 @@ def evaluate_all(cfg, model, device, full_tta=True):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config", type=str, default="/home/yantao/medical_ai/TU-SAM/configs/tusam.yaml")
+    parser.add_argument("--config", type=str, default="configs/tusam.yaml")
     parser.add_argument("--eval-only", action="store_true")
     args = parser.parse_args()
 

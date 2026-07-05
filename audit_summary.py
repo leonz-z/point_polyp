@@ -114,13 +114,13 @@ def main():
     parser.add_argument(
         "--audit",
         type=str,
-        default="/home/yantao/medical_ai/TU-SAM/outputs/tusam/audit.json",
+        default="outputs/tusam/audit.json",
         help="Path to audit.json",
     )
     parser.add_argument(
         "--out-dir",
         type=str,
-        default="/home/yantao/medical_ai/TU-SAM/outputs/tusam",
+        default="outputs/tusam",
         help="Directory to save summary outputs",
     )
     args = parser.parse_args()

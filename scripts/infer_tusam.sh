@@ -1,12 +1,12 @@
-#!/usr/bin/env bash
 set -euo pipefail
 
 # Usage:
 #   bash scripts/infer_tusam.sh
 #   CKPT=best bash scripts/infer_tusam.sh
-#   CONFIG=/path/to/tusam.yaml CKPT=last bash scripts/infer_tusam.sh
+#   CONFIG=configs/tusam.yaml CKPT=last bash scripts/infer_tusam.sh
 
-ROOT_DIR=""
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 CONFIG="${CONFIG:-${ROOT_DIR}/configs/tusam.yaml}"
 MODEL_NAME="$(CONFIG_PATH="${CONFIG}" python - <<'PY'
 import os, yaml

@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 export CUDA_VISIBLE_DEVICES=0
 set -euo pipefail
 
@@ -6,11 +5,13 @@ set -euo pipefail
 #   bash scripts/train_tusam.sh
 #   CUDA_VISIBLE_DEVICES=0 bash scripts/train_tusam.sh
 
-ROOT_DIR=""
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 CONFIG="${ROOT_DIR}/configs/tusam.yaml"
-MODEL_NAME="$(python - <<'PY'
+MODEL_NAME="$(CONFIG_PATH="${CONFIG}" python - <<'PY'
+import os
 import yaml
-with open('','r',encoding='utf-8') as f:
+with open(os.environ["CONFIG_PATH"], "r", encoding="utf-8") as f:
     cfg=yaml.safe_load(f)
 print(str(cfg.get('student_model','pvt')))
 PY
