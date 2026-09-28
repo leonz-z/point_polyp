@@ -1,6 +1,6 @@
 # PointPolyp
 
-This repository is the anonymized project page for the BIBM2026 submission
+This repository is the anonymized project page for the ICASSP2027 submission
 **PointPolyp: Polyp Segmentation with Point-Only Supervision**.
 
 PointPolyp studies strict point-only polyp segmentation, where each training
